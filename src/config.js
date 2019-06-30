@@ -7,7 +7,7 @@ class Config {
 		if (argv.config) {
 			config = require(argv.config);
 		} else {
-			config = require(path.join(process.cwd(), './.rescue-util.json'));
+			config = require(path.join(process.cwd(), './.rescueTimeUtil.json'));
 		}
 		
 		Object.keys(config).forEach(key => {
