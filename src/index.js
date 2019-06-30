@@ -4,13 +4,13 @@ const gs = require('./googleSpreadsheet');
 
 const main = async apiKey => {
 	config.init();
-	const dsf = await rescueTime.getDailySummaryFeed(config.apiKey, { when: new Date() });
+	const when = new Date();
+	when.setDate(when.getDate() - 1);
+	const dsf = await rescueTime.getDailySummaryFeed(config.apiKey, { when });
+	delete dsf.id;
 	gs.write(
-		{
-			client_email: config.spreadsheet.clientEmail,
-			private_key: config.spreadsheet.privateKey
-		},
-		config.spreadsheet.key,
+		config.googleApi.oauth2,
+		config.spreadsheet.id,
 		dsf,
 		{ key: 'date' }
 	);

@@ -11,7 +11,7 @@ exports.getDailySummaryFeed = async (apiKey, { when }) => {
 		return (
 			date.getYear() === when.getYear() &&
 			date.getMonth() === when.getMonth() &&
-			date.getDay() === when.getDay()
+			date.getDate() === when.getDate()
 		);
 	});
 };

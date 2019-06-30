@@ -63,3 +63,4 @@ typings/
 tags
 .rescueTimeUtil.json
 *.swp
+.googleApiToken.json
