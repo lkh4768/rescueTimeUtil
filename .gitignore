@@ -59,3 +59,8 @@ typings/
 
 # next.js build output
 .next
+
+tags
+.rescueTimeUtil.json
+*.swp
+.googleApiToken.json
